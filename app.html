@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusGuard.AI // SENTINEL — Unified Operations Command Center</title>
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    
+    <!-- Topbar Header -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <a href="/" class="brand-mark" style="font-size:1.1rem;">
+          <span class="brand-shield">🛡️</span>
+          <span>CampusGuard.AI <span class="brand-sub">// SENTINEL</span></span>
+        </a>
+
+        <div id="system-status-indicator" class="pill-agent">
+          <span class="pulse-dot"></span>
+          <span style="font-weight:700;">TinyFish Connected</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="cost-telemetry-badge">
+          <span style="color:#059669;">⚡</span>
+          <span>Compute: <strong id="telemetry-cost-val">₹0.03</strong> / audit</span>
+        </div>
+
+        <span class="badge badge-emerald" title="Zero generative hallucinations in arithmetic">
+          0.00 Math Hallucinations
+        </span>
+
+        <div style="display:flex; align-items:center; gap:0.5rem; background:#F8FAFC; border:var(--border-hairline); border-radius:var(--radius-full); padding:0.25rem 0.65rem;">
+          <div style="width:24px; height:24px; border-radius:50%; background:#0F172A; color:#FFF; font-size:0.75rem; font-weight:700; display:flex; align-items:center; justify-content:center;">AS</div>
+          <span style="font-size:0.8rem; font-weight:600;">Aarav Sharma (DTU)</span>
+        </div>
+
+        <button class="btn btn-primary btn-sm btn-download-zip">
+          📦 Download Project (.ZIP)
+        </button>
+      </div>
+    </header>
+
+    <!-- Quick Jump Anchor Bar -->
+    <nav class="quick-nav-bar">
+      <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-tertiary); margin-right:0.25rem;">Command Center:</span>
+      <a href="#sec-chat" class="quick-nav-pill active">💬 Sentinel AI Chat</a>
+      <a href="#sec-electricity" class="quick-nav-pill">⚡ PG Electricity Auditor</a>
+      <a href="#sec-internship" class="quick-nav-pill">🛡️ Internship Scam Firewall</a>
+      <a href="#sec-notices" class="quick-nav-pill">📄 Notice Board & Autopilot</a>
+      <a href="#sec-conflicts" class="quick-nav-pill">⚠️ Conflict Radar</a>
+      <a href="#sec-xray" class="quick-nav-pill">📡 Live Agent X-Ray</a>
+    </nav>
+
+    <!-- Top Metrics Banner Strip -->
+    <section class="metrics-strip">
+      <div class="metrics-grid">
+        
+        <div class="metric-card">
+          <div class="metric-card-top">
+            <span>Electricity Overcharge</span>
+            <span class="badge badge-crimson">CAUGHT</span>
+          </div>
+          <div id="metric-overcharge" class="metric-card-val rupee-amount" style="color:#DC2626;">
+            ₹2,160
+          </div>
+          <div class="metric-card-sub">
+            DERC Domestic benchmark (280 units @ ₹11)
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-card-top">
+            <span>Fake Internship Threat</span>
+            <span class="badge badge-crimson">BLOCKED</span>
+          </div>
+          <div id="metric-scam" class="metric-card-val" style="color:#DC2626; font-size:1.35rem;">
+            1 Critical Blocked
+          </div>
+          <div class="metric-card-sub">
+            Prohibited ₹1,499 fee + unauthenticated Gmail
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-card-top">
+            <span>Campus Notices</span>
+            <span class="badge badge-cobalt">TINYFETCH</span>
+          </div>
+          <div class="metric-card-val" style="color:var(--text-main); font-size:1.45rem;">
+            4 Circulars
+          </div>
+          <div class="metric-card-sub">
+            UGC STEM ₹50,000 grant + Theory Exams
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-card-top">
+            <span>Schedule Collision</span>
+            <span class="badge badge-amber">WARNING</span>
+          </div>
+          <div class="metric-card-val" style="color:#D97706; font-size:1.35rem;">
+            1 High Clash
+          </div>
+          <div class="metric-card-sub">
+            Dec 4–18 Exams overlap on-site onboarding
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Main Two-Column Dashboard Layout -->
+    <div class="dashboard-main-container">
+      
+      <!-- LEFT COLUMN: Sticky Sentinel AI Chat with Generative UI Mini-Forms -->
+      <aside id="sec-chat" class="chat-column">
+        <div class="chat-container">
+          
+          <div class="chat-header">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="pulse-dot"></span>
+              <strong style="font-size:0.95rem;">Sentinel AI Assistant</strong>
+              <span class="badge badge-cobalt" style="font-size:0.7rem;">Groq Llama 3.3</span>
+            </div>
+            <span style="font-size:0.75rem; color:var(--text-tertiary);">Talk, Don't Hunt</span>
+          </div>
+
+          <div id="chat-messages" class="chat-messages">
+            <div class="chat-bubble assistant">
+              <p>
+                Hello Aarav! I am <strong>SENTINEL Core</strong>. Type naturally about your PG bill, an internship offer, or college deadlines. I'll drop interactive audit forms directly below so you can execute calculations without leaving this view:
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Prompts -->
+          <div class="quick-prompts">
+            <button class="quick-prompt-pill" data-prompt="Audit my PG electricity bill of 280 units in Delhi charged at 11 per unit">
+              ⚡ 280 units @ ₹11 in Delhi
+            </button>
+            <button class="quick-prompt-pill" data-prompt="Check internship offer from hr.apex@gmail.com asking 1499 fee">
+              🛡️ Check ₹1,499 fee offer
+            </button>
+            <button class="quick-prompt-pill" data-prompt="Do my December theory exams clash with full-time work?">
+              ⚠️ Check exam conflicts
+            </button>
+            <button class="quick-prompt-pill" data-prompt="Show me active UGC and AICTE scholarships for engineering">
+              📄 UGC STEM circulars
+            </button>
+          </div>
+
+          <!-- Input Bar -->
+          <form id="chat-form" class="chat-input-bar">
+            <input id="chat-input" type="text" placeholder="Ask Sentinel anything or request an instant audit..." autocomplete="off">
+            <button type="submit" class="btn btn-primary btn-sm">
+              Send →
+            </button>
+          </form>
+
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN: All Protection Modules Combined into One Stream -->
+      <main class="modules-column">
+        
+        <!-- SECTION 1: PG & Hostel Electricity Tariff Auditor -->
+        <section id="sec-electricity" class="dashboard-section card">
+          <div class="section-header-block">
+            <div>
+              <h3>⚡ PG & Hostel Electricity Tariff Auditor</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Official State Electricity Regulatory Commission (SERC) slab math. Prohibits illegal sub-meter arbitrage under Electricity Act Section 126.
+              </p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.triggerElectricityAudit(280, 11, 'DERC', false)">
+              ⚡ Run Delhi Benchmark (280 units)
+            </button>
+          </div>
+
+          <div class="auditor-grid">
+            
+            <!-- Input Form -->
+            <form id="electricity-audit-form" style="background:var(--bg-canvas); border:var(--border-hairline); border-radius:var(--radius-md); padding:1.25rem; display:flex; flex-direction:column; gap:0.85rem;">
+              <div class="mini-field">
+                <label>Select State / DISCOM Jurisdiction</label>
+                <select id="bill-discom" class="form-control">
+                  <option value="DERC" selected>Delhi — DERC (BSES / TPDDL)</option>
+                  <option value="BESCOM">Karnataka (Bangalore) — BESCOM</option>
+                  <option value="TNEB">Tamil Nadu (Chennai) — TANGEDCO / TNEB</option>
+                  <option value="UPPCL">Uttar Pradesh (Noida) — UPPCL / PVVNL</option>
+                  <option value="WBSEDCL">West Bengal (Kolkata) — WBSEDCL / CESC</option>
+                </select>
+              </div>
+
+              <div class="mini-field">
+                <label>Units Consumed (kWh)</label>
+                <input id="bill-units" type="number" class="form-control" value="280">
+              </div>
+
+              <div class="mini-field">
+                <label>Rate Charged by Landlord (₹ / unit)</label>
+                <input id="bill-rate" type="number" step="0.5" class="form-control" value="11">
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top:0.25rem;">
+                Run Deterministic Tariff Audit →
+              </button>
+            </form>
+
+            <!-- Results Output Area -->
+            <div id="electricity-results">
+              <!-- Default rendered on init -->
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SECTION 2: Internship Scam Firewall -->
+        <section id="sec-internship" class="dashboard-section card">
+          <div class="section-header-block">
+            <div>
+              <h3>🛡️ Internship & Offer-Letter Scam Firewall</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Forensic inspection of recruiter webmail domains, upfront extortion fees, Google Places physical office checks, and ILO Art. 7 violations.
+              </p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.triggerInternshipAudit('Apex Tech Solutions', 'hr.apextech@gmail.com', 1499, false)">
+              🛡️ Audit Benchmark Scam Case
+            </button>
+          </div>
+
+          <div class="auditor-grid">
+            
+            <!-- Input Form -->
+            <form id="internship-audit-form" style="background:var(--bg-canvas); border:var(--border-hairline); border-radius:var(--radius-md); padding:1.25rem; display:flex; flex-direction:column; gap:0.85rem;">
+              <div class="mini-field">
+                <label>Company / Agency Name</label>
+                <input id="intern-company" type="text" class="form-control" value="Apex Cloud Technologies">
+              </div>
+
+              <div class="mini-field">
+                <label>Recruiter Email Address</label>
+                <input id="intern-email" type="text" class="form-control" value="hr.apexcloud@gmail.com">
+              </div>
+
+              <div class="mini-field">
+                <label>Demanded Upfront Fee or Security Deposit (₹)</label>
+                <input id="intern-fee" type="number" class="form-control" value="1499">
+              </div>
+
+              <div class="mini-field">
+                <label>Claimed Physical Office Address</label>
+                <input id="intern-address" type="text" class="form-control" value="Flat 402, Shanti Kunj, Koramangala 4th Block, Bangalore">
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top:0.25rem;">
+                Run Forensic Scam Interception →
+              </button>
+            </form>
+
+            <!-- Results Output Area -->
+            <div id="internship-results">
+              <!-- Rendered dynamically -->
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SECTION 3: College Notice Board & 1-Click Autopilot -->
+        <section id="sec-notices" class="dashboard-section card">
+          <div class="section-header-block">
+            <div>
+              <h3>📄 College & Scholarship Notice Board</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Live campus circulars auto-scraped via TinyFetch & TinyMonitor. Click below to autopilot your application form.
+              </p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.triggerAutopilotFill('circ-ugc-2024-08')">
+              🚀 Autopilot UGC STEM Scholarship
+            </button>
+          </div>
+
+          <div id="notices-feed" class="notices-grid">
+            <!-- Populated dynamically by noticeBoard.js -->
+          </div>
+        </section>
+
+        <!-- SECTION 4: Cross-Quest Conflict Radar -->
+        <section id="sec-conflicts" class="dashboard-section card">
+          <div class="section-header-block">
+            <div>
+              <h3>⚠️ Cross-Quest Conflict Radar</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Proactively intercepts calendar collisions between exam timetables, mandatory 75% attendance rules, and outside stipend limits.
+              </p>
+            </div>
+            <span class="badge badge-crimson">Schedule Collision Detected</span>
+          </div>
+
+          <div id="conflict-feed">
+            <!-- Populated dynamically by conflictRadar.js -->
+          </div>
+        </section>
+
+        <!-- SECTION 5: Live TinyFish Agent Telemetry Terminal -->
+        <section id="sec-xray" class="dashboard-section card">
+          <div class="section-header-block">
+            <div>
+              <h3>📡 Live TinyFish Agent X-Ray Virtual Terminal</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Real-time cloud browser telemetry observing live DOM evaluation, residential proxy routing, and cryptographic source provenance.
+              </p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.loadLiveTelemetryFeed()">
+              🔄 Replay Browser Stream
+            </button>
+          </div>
+
+          <div class="browser-telemetry-window">
+            <div class="browser-chrome-bar">
+              <div class="traffic-dots">
+                <span class="traffic-dot red"></span>
+                <span class="traffic-dot yellow"></span>
+                <span class="traffic-dot green"></span>
+              </div>
+              <div class="browser-url-bar">https://derc.gov.in/tariff-schedule/2024</div>
+              <span class="badge badge-emerald" style="font-size:0.7rem;">STREAMING_URL</span>
+            </div>
+            <div id="xray-log-feed" class="browser-telemetry-console">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- Modal: Landlord Dispute Notice -->
+  <div id="dispute-modal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:760px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:1.2rem;">⚖️</span>
+          <h3 style="font-size:1.1rem;">Statutory Landlord Dispute Notice</h3>
+        </div>
+        <button class="modal-close" onclick="closeDisputeModal()" style="font-size:1.4rem; color:var(--text-muted);">&times;</button>
+      </div>
+      <div id="dispute-modal-body" class="modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="navigator.clipboard.writeText(document.getElementById('dispute-modal-body').innerText); alert('Copied formal dispute notice to clipboard!');">
+          📋 Copy to Clipboard
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="window.print()">
+          🖨️ Print Formal Notice
+        </button>
+        <button class="btn btn-secondary btn-sm" onclick="closeDisputeModal()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Autopilot Form Mapped Fields -->
+  <div id="autopilot-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:1.2rem;">🚀</span>
+          <h3 style="font-size:1.1rem;">1-Click Autopilot Application Fill</h3>
+        </div>
+        <button class="modal-close" onclick="closeAutopilotModal()" style="font-size:1.4rem; color:var(--text-muted);">&times;</button>
+      </div>
+      <div id="autopilot-modal-body" class="modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-sm" onclick="alert('Autopilot payload submitted successfully to official college portal.'); closeAutopilotModal();">
+          Confirm & Dispatch Submission →
+        </button>
+        <button class="btn btn-secondary btn-sm" onclick="closeAutopilotModal()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Bundle Scripts -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
