@@ -1,15 +1,4 @@
 # CampusGuard.AI — Autonomous Student Protection Radar
-### **Team ThinkStack | Kritical Hacks 2026**
-> *“Smarter Research. Brighter Futures.”*
-
----
-
-## 👥 Team ThinkStack
-- **Ridhima** — *Team Leader & Product Architect*
-- **Naksh Maan** — *Full-Stack Engineer & API Integrations*
-- **Bhumi Khemani** — *UI/UX & Product Design*
-- **Divyanshi Garg** — *Research & Evidence Engineering*
-- **Sanghavi Singh** — *Safety & Verification Systems*
 
 ---
 
