@@ -165,9 +165,9 @@ This project is 100% pre-configured for Vercel with Serverless Functions (`verce
    Under **Settings &rarr; Environment Variables**, paste these 3 keys:
    | Key | Value | Notes |
    |---|---|---|
-   | `TINYFISH_API_KEY` | `sk-tinyfish-MZswc7X9-VAzLaj3ZWCqTkOzbphsqMyu` | TinyFish Search, Fetch & Cloud Browser |
-   | `GROQ_API_KEY` | `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` | Groq AI Evidence Grounding (gpt-oss-120b) |
-   | `GOOGLE_PLACES_API_KEY` | `AIzaSyCjn3Vc9WBAQFVi3Vp1hv5o9jCA7VzcauM` | Regional Places Autocomplete |
+   | `TINYFISH_API_KEY` | `sk-tinyfish-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx` | TinyFish Search, Fetch & Cloud Browser |
+   | `GROQ_API_KEY` | `gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` | Groq AI Evidence Grounding (gpt-oss-120b) |
+   | `GOOGLE_PLACES_API_KEY` | `Axxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` | Regional Places Autocomplete |
 4. **Deploy**:
    - Click **Deploy**! Your app is live at `https://campusguard-ai.vercel.app` with instant global SSL.
 
